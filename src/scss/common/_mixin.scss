@@ -1,0 +1,32 @@
+$breakpoints: (
+  small: 558px,
+  premedium: 768px,
+  medium: 1025px,
+  large: 1200px,
+);
+
+@mixin font($fname, $fweight, $number, $fstyle) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $number;
+    font-display: swap;
+    src: url('../fonts/' + $fname + '-' + $fweight + '.woff') format('woff');
+  }
+}
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin media($breakpoint, $minmax: max-width) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media ( $minmax: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

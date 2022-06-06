@@ -1,0 +1,190 @@
+.mobile-callback {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  background: var(--primary-color);
+  width: 100%;
+  left: 0;
+  display: none;
+  @include media(medium) {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-callback__item {
+    a {
+      display: flex;
+      align-items: center;
+    }
+    .icon {
+      width: 14px;
+      margin: 0 .3rem 0 0;
+      height: 14px;
+      fill: #fff;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .mobile-callback__text {
+      font-size: em(14);
+      color: #fff;
+      
+    }
+  }
+}
+.footer {
+  padding: 30px 0;
+  background: var(--primary-color);
+  color: var(--white-color);
+  .footer-top {
+    display: grid;
+    grid-template-columns: max-content max-content 280px;
+    justify-content: space-between;
+    padding: 0 0 66px 0;
+    border-bottom: 1px solid #fff;
+    @include media(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    @include media(premedium) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
+    .footer__title {
+      font-weight: 700;
+      font-size: em(20);
+      line-height: 150%;
+      margin: 0 0 20px 0;
+    }
+    .footer__col {
+      @include media(premedium) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer__logo {
+        max-width: 223px;
+        margin: 20px 0 30px 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .footer__btn {
+        @include media(premedium) {
+          align-self: start;
+        }
+      }
+      .footer__work-mode {
+        margin: 15px 0 38px 0;
+        font-weight: 400;
+        font-size: em(16);
+        &--text {
+          color: var(--accent-color);
+          margin: 0 0 5px 0;
+        }
+      }
+      .footer__payment {
+        .footer__payment-item {
+          max-width: 72px;
+          border-radius: 4px;
+          overflow: hidden;
+          margin: 0 4px 0 0;
+          &:last-child {
+            margin: 0;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .footer__terms {
+        display: grid;
+        grid-template-rows: repeat(5, min-content);
+        grid-auto-flow: column;
+        grid-gap: 15px 30px;
+        @include media(medium) {
+          grid-template-rows: auto;
+          grid-auto-flow: row;
+        }
+        .footer__terms-item {
+          font-weight: 400;
+          font-size: em(15);
+          margin: 0;
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+      .footer__item {
+        margin: 0 0 11px 0;
+        &:last-child {
+          margin: 0;
+        }
+        .footer__item--text {
+          font-size: em(12);
+          font-weight: 400;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          margin: 0 0 5px 0;
+        }
+        .footer__item--value {
+          font-weight: 600;
+          font-size: em(18);
+          line-height: 130%;
+          a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.5s;
+            &:hover {
+              color: var(--accent-color);
+            }
+          }
+        }
+      }
+      .footer__socials {
+        .footer__socials-item {
+          width: 30px;
+          height: 30px;
+          margin: 0 13px 0 0;
+          &:last-child {
+            margin: 0;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    margin: 20px 0 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include media(premedium) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
