@@ -1,11 +1,13 @@
 $breakpoints: (
-  small: 558px,
-  premedium: 768px,
-  medium: 1025px,
-  large: 1200px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
 );
 
-@mixin font($fname, $fweight, $number, $fstyle) {
+
+@mixin font($fname, $fweight, $number, $fstyle: normal) {
   @font-face {
     font-family: $fname;
     font-style: $fstyle;
@@ -19,8 +21,7 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
-
-@mixin media($breakpoint, $minmax: max-width) {
+@mixin breakpoints($breakpoint, $minmax: max-width) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media ( $minmax: #{map-get($breakpoints, $breakpoint)}) {
       @content;
